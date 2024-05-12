@@ -1,0 +1,19 @@
+<MainScreen>:
+    BoxLayout:
+        orientation: "vertical"
+        Label:
+            text: "рАхунок"
+        FloatLayout:
+            Image:
+                id: ball
+                size_hint: 0.4, 0.4
+                pos_hint: {"center_x": 0.5, "center_y": 0.5}
+                source: "pngwing.com (10).png"
+            Button:
+                size_hint: 0.4, 0.4
+                background_color: 1,0,0,0.5
+                pos_hint: {"center_x": 0.5, "center_y": 0.5}
+                on_press: root.cli()
+                on_release: root.cli1()
+        Button:
+            text: "123"
