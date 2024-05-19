@@ -2,7 +2,7 @@
     BoxLayout:
         orientation: "vertical"
         Label:
-            text: "рАхунок"
+            text: "ГРА"
         FloatLayout:
             Image:
                 id: ball
@@ -17,3 +17,15 @@
                 on_release: root.cli1()
         Button:
             text: "123"
+
+
+<MiniScreen>:
+    BoxLayout:
+        orientation: "vertical"
+        Label:
+            text: "ЛАУНЧЕР: для авторизації гри"
+        Button:
+            text: "АВТОРИЗАЦІЯ"
+            on_press: root.Click()
+            on_release: root.Click()
+
