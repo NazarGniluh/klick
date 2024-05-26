@@ -48,6 +48,25 @@ class MainScreen(Screen):
         self.ids.ball.size_hint = (1, 1)
 
 
+    def shop_switch(self):
+        self.manager.current = "shop"
+
+class ShopScreen(Screen):
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+
+    def shop_switch(self):
+        self.manager.current = "main"
+    def buy(self, price, power):
+        read_dat()
+        if price <= player["score"]:
+            player["score"] -= price
+            player["power"] += power
+            save_dat()
+
+
+
+
 
 class MiniScreen(Screen):
     def __init__(self, **kwargs):
@@ -62,6 +81,7 @@ class CkickApp(App):
         sm = ScreenManager()
         sm.add_widget(MiniScreen(name='mini'))
         sm.add_widget(MainScreen(name='main'))
+        sm.add_widget(ShopScreen(name='shop'))
         return sm
 
 app = CkickApp()

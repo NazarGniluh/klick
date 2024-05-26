@@ -9,7 +9,7 @@
                 id: ball
                 size_hint: 0.4, 0.4
                 pos_hint: {"center_x": 0.5, "center_y": 0.5}
-                source: "pngwing.com (10).png"
+                source: "panda.jpg"
             Button:
                 size_hint: 0.4, 0.4
                 background_color: 0,0,0,0.5
@@ -17,8 +17,9 @@
                 on_press: root.cli()
                 on_release: root.cli1()
         Button:
-            background_color: 0,0,1,0.8
-            text: "Нажми"
+            background_color: 0,255,0,0.9
+            text: "МАГАЗИН"
+            on_press: root.shop_switch()
 
 
 <MiniScreen>:
@@ -26,11 +27,75 @@
         orientation: "vertical"
         Label:
             text: "ЛАУНЧЕР: для авторизації гри"
-        TextInput(hint_text="Write Here", sixe_hint=(.4,.1) pos=(250,250))
+
 
         Button:
             background_color: 10,7,0,0.5
             text: "АВТОРИЗАЦІЯ"
             on_press: root.Click()
             on_release: root.Click()
+
+
+
+<ShopScreen>:
+    FloatLayout:
+        Image:
+            source: 'market.png'
+            allow_stretch: True
+            keep_ratio: False
+        BoxLayout:
+            orientation: "vertical"
+            BoxLayout:
+                orientation: "horizontal"
+                size_hint: 1, 0.2
+                Button:
+                    text: "Назад"
+                    on_press: root.shop_switch()
+                Label:
+                    text: "Рахунок"
+            ScrollView:
+                size_hint_y: None
+                size_hint: 1, 1
+                GridLayout:
+                    id: shopItems
+                    size_hint_y: None
+                    height: self.minimum_height
+                    cols: 1
+                    row_default_height: 100
+                    FloatLayout:
+                        Button:
+                            size_hint: 1, 1
+                            pos_hint: {'center_x': 0.5, 'center_y':0.5}
+
+                            on_press: root.buy(50, 100)
+
+                        Image:
+                            size_hint: 0.1, 1
+                            pos_hint: {'x': 0, 'center_y':0.5}
+                            source: 'pngwing.com (10).png'
+
+                            
+                        Label:
+                            size_hint: 1, 1
+                            pos_hint: {'x': 0, 'center_y':0.5}
+                            text: "50 usd"
+
+                    FloatLayout:
+                        Button:
+                            size_hint: 1, 1
+                            pos_hint: {'center_x': 0.5, 'center_y':0.5}
+                            on_press: root.buy(100, 180)
+
+                        Image:
+                            size_hint: 0.1, 1
+                            pos_hint: {'x': 0, 'center_y':0.5}
+                            source: 'panda.jpg'
+                        Label:
+                            size_hint: 1, 1
+                            pos_hint: {'x': 0, 'center_y':0.5}
+                            text: "100 usd"
+
+
+
+
 
