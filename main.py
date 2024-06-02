@@ -34,14 +34,15 @@ class MainScreen(Screen):
         super().__init__(**kwargs)
     def on_enter(self, *args):
         read_dat()
-        self.ids.score_lbl.text = " рахунок: " + str(player["score"])
+
+        self.ids.score_lbl.text = "[color=000000] РАХУНОК: " + str(player["score"])+"[/color]"
 
     def cli(self):
         self.ids.ball.size_hint = (0.5, 0.5)
 
         read_dat()
         player["score"] += player["power"]
-        self.ids.score_lbl.text = " рахунок: " + str(player["score"])
+        self.ids.score_lbl.text = "[color=000000] РАХУНОК: " + str(player["score"])+"[/color]"d
         save_dat()
 
     def cli1(self):

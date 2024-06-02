@@ -1,37 +1,50 @@
 <MainScreen>:
+    FloatLayout:
+        Image:
+            source: 'ukrpole.jpg'
+            allow_stretch: True
+            keep_ratio: False
     BoxLayout:
         orientation: "vertical"
         Label:
             id: score_lbl
-            text: "0"
+            markup: True
         FloatLayout:
             Image:
                 id: ball
                 size_hint: 0.4, 0.4
                 pos_hint: {"center_x": 0.5, "center_y": 0.5}
-                source: "panda.jpg"
+                source: "flagukr.jpg"
             Button:
                 size_hint: 0.4, 0.4
-                background_color: 0,0,0,0.5
+                background_color: 0,0,0,0
                 pos_hint: {"center_x": 0.5, "center_y": 0.5}
                 on_press: root.cli()
                 on_release: root.cli1()
         Button:
-            background_color: 0,255,0,0.9
+            background_color: 0,0,0,0
             text: "МАГАЗИН"
+            color: 255, 0, 51
             on_press: root.shop_switch()
 
 
 <MiniScreen>:
+    FloatLayout:
+        Image:
+            source: 'pole.jpg'
+            allow_stretch: True
+            keep_ratio: False
     BoxLayout:
         orientation: "vertical"
         Label:
-            text: "ЛАУНЧЕР: для авторизації гри"
+            text: "ГРА: КЛІКЕР"
+            color: 0,35,60
 
 
         Button:
-            background_color: 10,7,0,0.5
-            text: "АВТОРИЗАЦІЯ"
+            background_color: 10,7,0,0
+            text: "ВХІД В ГРУ"
+            color: 255,40,0
             on_press: root.Click()
             on_release: root.Click()
 
@@ -50,9 +63,13 @@
                 size_hint: 1, 0.2
                 Button:
                     text: "Назад"
+                    color: 255,0,0
+                    background_color: 0,0,0,0
                     on_press: root.shop_switch()
                 Label:
-                    text: "Рахунок"
+                    text: "РАХУНОК"
+                    color: 255,0,0
+
             ScrollView:
                 size_hint_y: None
                 size_hint: 1, 1
@@ -62,17 +79,18 @@
                     height: self.minimum_height
                     cols: 1
                     row_default_height: 100
+
                     FloatLayout:
                         Button:
                             size_hint: 1, 1
                             pos_hint: {'center_x': 0.5, 'center_y':0.5}
-
+                            background_color: 80,2,0,1
                             on_press: root.buy(50, 100)
 
                         Image:
                             size_hint: 0.1, 1
                             pos_hint: {'x': 0, 'center_y':0.5}
-                            source: 'pngwing.com (10).png'
+                            source: 'kopika.jpg'
 
                             
                         Label:
@@ -84,16 +102,66 @@
                         Button:
                             size_hint: 1, 1
                             pos_hint: {'center_x': 0.5, 'center_y':0.5}
+                            background_color: 0,105,60,1
                             on_press: root.buy(100, 180)
 
                         Image:
                             size_hint: 0.1, 1
                             pos_hint: {'x': 0, 'center_y':0.5}
-                            source: 'panda.jpg'
+                            source: 'atb.jpg'
                         Label:
                             size_hint: 1, 1
                             pos_hint: {'x': 0, 'center_y':0.5}
                             text: "100 usd"
+
+                    FloatLayout:
+                        Button:
+                            size_hint: 1, 1
+                            pos_hint: {'center_x': 0.5, 'center_y':0.5}
+                            background_color: 0,250,0,1
+                            on_press: root.buy(150, 200)
+
+                        Image:
+                            size_hint: 0.1, 1
+                            pos_hint: {'x': 0, 'center_y':0.5}
+                            source: 'borch.png'
+                        Label:
+                            size_hint: 1, 1
+                            pos_hint: {'x': 0, 'center_y':0.5}
+                            text: "150 usd"
+
+                    FloatLayout:
+                        Button:
+                            size_hint: 1, 1
+                            pos_hint: {'center_x': 0.5, 'center_y':0.5}
+                            background_color: 20,35,0,1
+                            on_press: root.buy(200, 280)
+
+                        Image:
+                            size_hint: 0.1, 1
+                            pos_hint: {'x': 0, 'center_y':0.5}
+                            source: 'kvac.png'
+                        Label:
+                            size_hint: 1, 1
+                            pos_hint: {'x': 0, 'center_y':0.5}
+                            text: "200 usd"
+
+                    FloatLayout:
+                        Button:
+                            size_hint: 1, 1
+                            pos_hint: {'center_x': 0.5, 'center_y':0.5}
+                            background_color: 16,0,0,1
+                            on_press: root.buy(500, 5000)
+
+                        Image:
+                            size_hint: 0.1, 1
+                            pos_hint: {'x': 0, 'center_y':0.5}
+                            source: 'ukraine.png'
+                        Label:
+                            size_hint: 1, 1
+                            pos_hint: {'x': 0, 'center_y':0.5}
+                            text: "500 usd"
+
 
 
 
